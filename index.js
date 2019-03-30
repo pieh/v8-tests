@@ -89,11 +89,13 @@ const results2 = Object.entries(values).reduce((valAcc, [type, value]) => {
           acc[`${label} - type`] = _typeof(d);
         } catch (e) {
           acc[`${label} - deserialized`] = Crashed;
+          acc[`${label} - type`] = Crashed;
           acc[`${label} - error`] = e.message;
         }
       } catch (e) {
         acc[`${label} - serialized`] = Crashed;
         acc[`${label} - deserialized`] = Crashed;
+        acc[`${label} - type`] = Crashed;
         acc[`${label} - error`] = e.message;
       }
 
